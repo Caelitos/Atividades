@@ -1,40 +1,41 @@
-
+//CAAC
 package atividades;
 
 import java.util.Scanner;
 
-/**
- *
- * @author Carlos
- */
+
 public class Fibonacci {
   
-    static long fibo(int n) {
-        return (n < 2) ? n : fibo(n - 1) + fibo(n - 2);
-    }
+    
   
   
     public static void main(String[] args) {
-        Scanner tcl = new Scanner(System.in);
-     Fibonacci obj = new Fibonacci();
-     long vetor[] = new long[30];
-     
-        for (int i = 0; i < 30; i++) {
-            
-           //System.out.println("(" + i + "):" + obj.fibo(i));
-            
-            long aux = obj.fibo(i);
-            vetor[i] = aux;
+    Scanner tcl = new Scanner(System.in);
+        System.out.println("Digite até que posição quer pesquisar:");
+        int tam = tcl.nextInt(); 
+        long a = 1;
+        long b = 0;
+        long aux;
+        
+        long vetor[] = new long[tam];
+        
+        for (int i = 0; i < vetor.length; i++) {
+            vetor[i] = b;
+            aux = a;
+            a += b;
+            b = aux;
+            System.out.println(vetor[i]);
+                    
         }
         
+        
         boolean resul = false;
-        System.out.println("Digite o valor a ser procurado");
+        System.out.println("Digite a posição da sequência");
         int nume = tcl.nextInt();
         System.out.println("");
         for (int j = 0; j < vetor.length; j++) {
-            if(nume == vetor[j]) {
-               System.out.println("Numero encontrado na posição: " + (j + 1 ) + "°");
-               System.out.println("O Numero encontrado nessa posição foi: " + vetor[j]);
+            if(nume == ( j + 1 ) ) {
+               System.out.println("Numero da posição: " + (j + 1) + "° é " + vetor[j]);
                 resul = true;
                 break;
             }else{
