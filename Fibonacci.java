@@ -28,23 +28,15 @@ public class Fibonacci {
                     
         }
         
-        
-        boolean resul = false;
+      
         System.out.println("Digite a posição da sequência");
         int nume = tcl.nextInt();
         System.out.println("");
         for (int j = 0; j < vetor.length; j++) {
             if(nume == ( j + 1 ) ) {
                System.out.println("Numero da posição: " + (j + 1) + "° é " + vetor[j]);
-                resul = true;
-                break;
-            }else{
-                resul = false;                
+
             }
         }
-        if(resul == false){
-            System.out.println("Valor não encontrado");
-        }
     }
-}
-  
+}  
